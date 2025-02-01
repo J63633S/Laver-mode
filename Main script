@@ -1,5 +1,5 @@
 warn("Loading")
-_G.ver = 0.62
+_G.ver = 1
 
 local sync = loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAcceleration/Comet-Development/refs/heads/main/Doors/Utility/SyncHelper.lua"))()
 local seed = game.ReplicatedStorage.GameData.GameSeed.Value
@@ -54,7 +54,7 @@ lastroom.changed:connect(function()
     if table.find(chaoticsp, lastroom.Value) then
 	task.spawn(function()
 	        task.wait(sync:generateFullRandom(2,10,lastroom.Value))
-	        loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Awesome-ENTITIES-bec-i-have-an-pc/refs/heads/main/chaotic.rbxm"))()
+	        loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Chaotic"))()
 	end)
     end
 end)
