@@ -1,5 +1,5 @@
 warn("Loading")
-_G.ver = 1.1
+_G.ver = 1.5
 
 local sync = loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAcceleration/Comet-Development/refs/heads/main/Doors/Utility/SyncHelper.lua"))()
 local seed = game.ReplicatedStorage.GameData.GameSeed.Value
@@ -12,23 +12,28 @@ local commands = {"SILENCEHARDCORE8","devonpapafrita3","dimaalt4"}
 
 local captions = {"Good Luck"}
 _G.chaotic= false
+_G.classio= false
 
 _G.insp = true
 
 local chaoticsp = {}
+local classiosp = {}
 
 for i = 15 , 95 , sync:generateFullRandom(6,8,seed) do
   table.insert(chaoticsp,sync:generateFullRandom(i - 4,i + 7,seed + i))
+end
+for i = 12 , 99 , sync:generateFullRandom(6,8,seed) do
+  table.insert(classiosp,sync:generateFullRandom(i - 4,i + 7,seed + i))
 end
 
 TextChatService.OnIncomingMessage = function(Message: TextChatMessage)
 	if Message.TextSource then
 		local player = game.Players:GetPlayerByUserId(Message.TextSource.UserId)
 		if player.Name == "SILENCEHARDCORE8" or player.Name == "SILENCEHARDCORE8" then
-			Message.PrefixText = " <font color='#ff007c'>[Script owner]</font> " .. Message.PrefixText
+			Message.PrefixText = " <font color='#ff007c'>[Owner]</font> " .. Message.PrefixText
 		end
 		if table.find(whitelist,player.Name) then
-			Message.PrefixText = " <font color='#00A2FF'>[Cool Guy]</font> " .. Message.PrefixText
+			Message.PrefixText = " <font color='#00A2FF'>[Coolio]</font> " .. Message.PrefixText
 		end
 		if table.find(commands,player.Name) then
 			if Message.Text.find(Message.Text , "/caption") then
@@ -55,6 +60,13 @@ lastroom.changed:connect(function()
 	task.spawn(function()
 	        task.wait(sync:generateFullRandom(5,15,lastroom.Value))
 	        loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Chaotic"))()
+	end)
+    end
+lastroom.changed:connect(function()
+    if table.find(classiosp, lastroom.Value) then
+	task.spawn(function()
+	        task.wait(sync:generateFullRandom(2,12,lastroom.Value))
+	        loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Classio-Reboundier"))()
 	end)
     end
 end)
