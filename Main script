@@ -61,13 +61,12 @@ lastroom.changed:connect(function()
 	task.spawn(function()
 	        task.wait(sync:generateFullRandom(5,15,lastroom.Value))
 	        loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Chaotic"))()
-	end)
-    end
-lastroom.changed:connect(function()
-    if table.find(classiosp, lastroom.Value) then
-	task.spawn(function()
-	        task.wait(sync:generateFullRandom(2,12,lastroom.Value))
-	        loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Classio-Reboundier"))()
-	end)
-    end
+end)
+    	end
+	if table.find(classiosp, lastroom.Value) then
+		task.spawn(function()
+			task.wait(sync:generateFullRandom(2,12,lastroom.Value))
+	        	loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Classio-Reboundier"))()
+		end)
+    	end
 end)
