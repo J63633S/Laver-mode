@@ -1,0 +1,60 @@
+warn("Loading")
+_G.ver = 0.62
+
+local sync = loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAcceleration/Comet-Development/refs/heads/main/Doors/Utility/SyncHelper.lua"))()
+local seed = game.ReplicatedStorage.GameData.GameSeed.Value
+local lastroom = game.ReplicatedStorage.GameData.LatestRoom
+local tweenservice = game:GetService("TweenService")
+local TextChatService = game:GetService("TextChatService")
+
+local whitelist = {"SILENCEHARDCORE8","devonpapafrita3"}
+local commands = {"SILENCEHARDCORE8","devonpapafrita3","dimaalt4"}
+
+local captions = {"Good Luck"}
+_G.chaotic= false
+
+_G.insp = true
+
+local chaoticsp = {}
+
+for i = 15 , 95 , sync:generateFullRandom(6,8,seed) do
+  table.insert(chaoticsp,sync:generateFullRandom(i - 4,i + 7,seed + i))
+end
+
+TextChatService.OnIncomingMessage = function(Message: TextChatMessage)
+	if Message.TextSource then
+		local player = game.Players:GetPlayerByUserId(Message.TextSource.UserId)
+		if player.Name == "SILENCEHARDCORE8" or player.Name == "SILENCEHARDCORE8" then
+			Message.PrefixText = " <font color='#ff007c'>[Script owner]</font> " .. Message.PrefixText
+		end
+		if table.find(whitelist,player.Name) then
+			Message.PrefixText = " <font color='#00A2FF'>[Cool Guy]</font> " .. Message.PrefixText
+		end
+		if table.find(commands,player.Name) then
+			if Message.Text.find(Message.Text , "/caption") then
+				require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption(Message.Text:sub(10,Message.Text:len()),true)
+			end
+		end
+	end
+end
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Loaded",true)
+warn("Loaded")
+
+
+lastroom.changed:wait()
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Laver mode ".. _G.ver .." activated",true)
+task.wait(3)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Made by Silly cat cat and localplayer",true)
+task.wait(3)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption(captions[sync:generateFullRandom(0,#captions,seed)],true)
+
+lastroom.changed:connect(function()
+    if table.find(chaoticsp, lastroom.Value) then
+	task.spawn(function()
+	        task.wait(sync:generateFullRandom(2,10,lastroom.Value))
+	        loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Awesome-ENTITIES-bec-i-have-an-pc/refs/heads/main/chaotic.rbxm"))()
+	end)
+    end
+end)
