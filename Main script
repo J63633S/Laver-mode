@@ -53,7 +53,7 @@ require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption(c
 lastroom.changed:connect(function()
     if table.find(chaoticsp, lastroom.Value) then
 	task.spawn(function()
-	        task.wait(sync:generateFullRandom(2,10,lastroom.Value))
+	        task.wait(sync:generateFullRandom(5,15,lastroom.Value))
 	        loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Chaotic"))()
 	end)
     end
