@@ -12,8 +12,8 @@ local entity = spawner.Create({
 	},
 	Lights = {
 		Flicker = {
-			Enabled = false,
-			Duration = 1
+			Enabled = true,
+			Duration = 4
 		},
 		Shatter = false,
 		Repair = false
@@ -24,11 +24,11 @@ local entity = spawner.Create({
 	CameraShake = {
 		Enabled = true,
 		Range = 50,
-		Values = {20, 3, 0.3, 6} -- Magnitude, Roughness, FadeIn, FadeOut
+		Values = {100, 30, 0.1, 0.1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
-		Speed = 150,
-		Delay = 0,
+		Speed = 195,
+		Delay = 3,
 		Reversed = false
 	},
 	Rebounding = {
@@ -51,7 +51,7 @@ local entity = spawner.Create({
 	},
 	Death = {
 		Type = "Guiding", -- "Curious"
-		Hints = {"You died to chaotic...", "To survive him, hide and wait for him to despawn.", "He can rebound up to 2 or 3 times."},
+		Hints = {"You died to chaotic...", "To survive him, hide and wait for him to despawn.", "He can rebound up to 2 or 3 times.", "Goodluck next time."},
 		Cause = ""
 	}
 })
