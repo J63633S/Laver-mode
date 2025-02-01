@@ -11,8 +11,8 @@ local whitelist = {"SILENCEHARDCORE8","devonpapafrita3"}
 local commands = {"SILENCEHARDCORE8","devonpapafrita3","dimaalt4"}
 
 local captions = {"Good Luck"}
-_G.chaotic= false
-_G.classio= false
+_G.chaotic = false
+_G.classio = false
 
 _G.insp = true
 
