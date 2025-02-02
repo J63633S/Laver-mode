@@ -7,7 +7,7 @@ local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 local entity = spawner.Create({
 	Entity = {
 		Name = "Corrode",
-		Asset = "https://github.com/RegularVynixu/Utilities/raw/main/Doors/Entity%20Spawner/Assets/Entities/Rush.rbxm",
+		Asset = "https://raw.githubusercontent.com/J63633S/Awesome-ENTITIES-bec-i-have-an-pc/refs/heads/main/corrode.rbxm",
 		HeightOffset = 0
 	},
 	Lights = {
@@ -24,7 +24,7 @@ local entity = spawner.Create({
 	CameraShake = {
 		Enabled = true,
 		Range = 100,
-		Values = {80, 50, 0.1, 0.1} -- Magnitude, Roughness, FadeIn, FadeOut
+		Values = {45, 6, 0.1, 0.1} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
 		Speed = 100,
