@@ -17,10 +17,6 @@ CustomMusic:Play()
 
 game.SoundService.AmbientReverb = Enum.ReverbType.Cave
 
--- new fog
-local Lighting = game:GetService("Lighting")
-Lighting.Ambient = Color3.new(14, 32, 61)
-Lighting.Brightness = 0.1
 warn("Loading")
 _G.ver = 2.1
 
