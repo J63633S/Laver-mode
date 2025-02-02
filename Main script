@@ -24,10 +24,6 @@ local sync = loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAc
 local seed = game.ReplicatedStorage.GameData.GameSeed.Value
 local lastroom = game.ReplicatedStorage.GameData.LatestRoom
 local tweenservice = game:GetService("TweenService")
-local TextChatService = game:GetService("TextChatService")
-
-local whitelist = {"SILENCEHARDCORE8","dimaalt4}
-local commands = {"SILENCEHARDCORE8","dimaalt4"}
 
 local captions = {"Good Luck"}
 _G.chaotic = false
@@ -58,22 +54,6 @@ for i = 17 , 96 , sync:generateFullRandom(4,5,seed) do
   table.insert(moriartysp,sync:generateFullRandom(i - 4,i + 7,seed + i))
 end
 
-TextChatService.OnIncomingMessage = function(Message: TextChatMessage)
-	if Message.TextSource then
-		local player = game.Players:GetPlayerByUserId(Message.TextSource.UserId)
-		if player.Name == "SILENCEHARDCORE8" or player.Name == "SILENCEHARDCORE8" then
-			Message.PrefixText = " <font color='#ff007c'>[Owner]</font> " .. Message.PrefixText
-		end
-		if table.find(whitelist,player.Name) then
-			Message.PrefixText = " <font color='#00A2FF'>[Playtester]</font> " .. Message.PrefixText
-		end
-		if table.find(commands,player.Name) then
-			if Message.Text.find(Message.Text , "/caption") then
-				require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption(Message.Text:sub(10,Message.Text:len()),true)
-			end
-		end
-	end
-end
 
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Loaded",true)
 warn("Loaded")
