@@ -46,15 +46,15 @@ for i = 15 , 95 , sync:generateFullRandom(6,8,seed) do
   table.insert(chaoticsp,sync:generateFullRandom(i - 4,i + 7,seed + i))
 end
 
-for i = 12 , 99 , sync:generateFullRandom(12,11,seed) do
+for i = 12 , 99 , sync:generateFullRandom(8,5,seed) do
   table.insert(classiosp,sync:generateFullRandom(i - 4,i + 7,seed + i))
 end
 
-for i = 6 , 90 , sync:generateFullRandom(8,11,seed) do
+for i = 6 , 90 , sync:generateFullRandom(8,6,seed) do
   table.insert(corrodesp,sync:generateFullRandom(i - 4,i + 7,seed + i))
 end
 
-for i = 20 , 99 , sync:generateFullRandom(6,11,seed) do
+for i = 18 , 99 , sync:generateFullRandom(6,6,seed) do
   table.insert(moriartysp,sync:generateFullRandom(i - 4,i + 7,seed + i))
 end
 
