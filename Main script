@@ -54,7 +54,7 @@ for i = 6 , 90 , sync:generateFullRandom(8,6,seed) do
   table.insert(corrodesp,sync:generateFullRandom(i - 4,i + 7,seed + i))
 end
 
-for i = 18 , 99 , sync:generateFullRandom(6,6,seed) do
+for i = 17 , 96 , sync:generateFullRandom(4,5,seed) do
   table.insert(moriartysp,sync:generateFullRandom(i - 4,i + 7,seed + i))
 end
 
@@ -108,7 +108,7 @@ if table.find(corrodesp, lastroom.Value) then
     	end
 if table.find(moriartysp, lastroom.Value) then
 		task.spawn(function()
-			task.wait(sync:generateFullRandom(2,20,lastroom.Value))
+			task.wait(sync:generateFullRandom(1,17,lastroom.Value))
 	        	loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Corrode"))()
 		end)
     	end
