@@ -26,8 +26,8 @@ local lastroom = game.ReplicatedStorage.GameData.LatestRoom
 local tweenservice = game:GetService("TweenService")
 local TextChatService = game:GetService("TextChatService")
 
-local whitelist = {"SILENCEHARDCORE8", "dimaalt4}
-local commands = {"SILENCEHARDCORE8", "dimaalt4"}
+local whitelist = {"SILENCEHARDCORE8","dimaalt4}
+local commands = {"SILENCEHARDCORE8","dimaalt4"}
 
 local captions = {"Good Luck"}
 _G.chaotic = false
