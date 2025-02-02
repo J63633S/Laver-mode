@@ -1,5 +1,28 @@
+local function getGitSoundId(GithubSoundPath: string, AssetName: string): Sound
+    local Url = GithubSoundPath
+
+    if not isfile(AssetName..".mp3") then 
+        writefile(AssetName..".mp3", game:HttpGet(Url)) 
+    end
+
+    local Sound = Instance.new("Sound")
+    Sound.SoundId = getcustomasset(AssetName..".mp3", true)
+    return Sound 
+end
+
+local CustomMusic = getGitSoundId("https://raw.githubusercontent.com/J63633S/Fog-script/refs/heads/main/ambient%20that%20doesn't%20work%20FOR%20GODS%20SAKE.mp3", "ambience")
+CustomMusic.Parent = game.SoundService
+CustomMusic.Looped = true
+CustomMusic:Play()
+
+game.SoundService.AmbientReverb = Enum.ReverbType.Cave
+
+-- new fog
+local Lighting = game:GetService("Lighting")
+Lighting.Ambient = Color3.new(14, 32, 61)
+Lighting.Brightness = 0.1
 warn("Loading")
-_G.ver = 2.0
+_G.ver = 2.1
 
 local sync = loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAcceleration/Comet-Development/refs/heads/main/Doors/Utility/SyncHelper.lua"))()
 local seed = game.ReplicatedStorage.GameData.GameSeed.Value
