@@ -23,8 +23,8 @@ local entity = spawner.Create({
 	},
 	CameraShake = {
 		Enabled = true,
-		Range = 800,
-		Values = {80, 80, 0.01, 0.01} -- Magnitude, Roughness, FadeIn, FadeOut
+		Range = 400,
+		Values = {10, 30, 0.01, 0.01} -- Magnitude, Roughness, FadeIn, FadeOut
 	},
 	Movement = {
 		Speed = 500,
