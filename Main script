@@ -100,7 +100,7 @@ if table.find(moriartysp, lastroom.Value) then
 if table.find(deathsp, lastroom.Value) then
 		task.spawn(function()
 			task.wait(sync:generateFullRandom(2,20,lastroom.Value))
-	        	loadstring(game:HttpGet(""))()
+	        	loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Death"))()
 		end)
     	end
 end)
