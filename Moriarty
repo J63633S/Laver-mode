@@ -3,6 +3,15 @@ if game.Workspace:FindFirstChild("SeekMovingNewClone") then return end
 
 local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/V2/Source.lua"))()
 
+sound.SoundId = ""
+sound.PlaybackSpeed = 1
+sound.Volume = 1
+local tweenservice = game:GetService("TweenService")
+
+sound:Play()
+local anim = tweenservice:Create(Instance.new("ColorCorrectionEffect",game.Lighting),TweenInfo.new(1,Enum.EasingStyle.Linear),{Saturation = 1})
+anim:Play()
+
 ---====== Create entity ======---
 
 local entity = spawner.Create({
@@ -121,3 +130,5 @@ end)
 ---====== Run entity ======---
 
 entity:Run()
+wait(10)
+game.Lighting.ColorCorrectionEffect:Destroy()
