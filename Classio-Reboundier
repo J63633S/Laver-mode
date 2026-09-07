@@ -3,7 +3,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 ---====== Create entity ======---
 local entity = Spawner:Create({
 	Entity = {
-		Name = "Average Rebounding From the Front guy",
+		Name = "Average Rebounding Entity",
 		Asset = "https://github.com/J63633S/Awesome-ENTITIES-bec-i-have-an-pc/raw/main/Classic_RebounderV2.rbxm",
 		HeightOffset = 0
 	},
@@ -26,7 +26,7 @@ local entity = Spawner:Create({
 	Movement = {
 		Speed = 89,
 		Delay = 3,
-		Reversed = true
+		Reversed = false
 	},
 	Rebounding = {
 		Enabled = true,
