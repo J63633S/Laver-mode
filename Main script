@@ -20,8 +20,6 @@ game.SoundService.AmbientReverb = Enum.ReverbType.Cave
 warn("Loading")
 _G.ver = 2.1
 
-local sync = loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAcceleration/Comet-Development/refs/heads/main/Doors/Utility/SyncHelper.lua"))()
-local seed = game.ReplicatedStorage.GameData.GameSeed.Value
 local lastroom = game.ReplicatedStorage.GameData.LatestRoom
 local tweenservice = game:GetService("TweenService")
 
