@@ -8,7 +8,7 @@ local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 local entity = spawner.Create({
 	Entity = {
 		Name = "Death",
-		Asset = "https://raw.githubusercontent.com/J63633S/Awesome-ENTITIES-bec-i-have-an-pc/refs/heads/main/death.rbxm",
+		Asset = "https://raw.githubusercontent.com/J63633S/Awesome-ENTITIES-bec-i-have-an-pc/main/death_V2.rbxm",
 		HeightOffset = 0
 	},
 	Lights = {
