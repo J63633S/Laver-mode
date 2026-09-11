@@ -97,6 +97,22 @@ end)
 
 entity:SetCallback("OnDespawned", function()
     print("Entity has despawned")
+local CustomAchievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/DOORS-Custom-Achievements/main/init.luau"))()
+
+if CustomAchievements:CheckOwned("TestAchievement") then
+    CustomAchievements:Revoke("TestAchievement")
+end
+
+CustomAchievements:Grant({
+    Identifier = "Survived Death",
+    Title = "Survived Death",
+    Desc = "I will be back for you",
+    Reason = "Out of all chances survived your death",
+    Image = "rbxassetid://81576180275031"
+}, {
+    CheckOwned = false,
+    Remember = true
+})
 end)
 
 entity:SetCallback("OnDamagePlayer", function(newHealth)
