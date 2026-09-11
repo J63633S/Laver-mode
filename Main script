@@ -43,24 +43,24 @@ local corrodesp = {}
 local moriartysp = {}
 local deathsp = {}
 
-for i = 15 , 95 , r:generateFullRandom(6,8,seed) do
-	table.insert(chaoticsp,r2:generateFullRandom(i - 4,i + 7,seed + i))
+for i = 15 , 95 , r:NextInteger(6,8,seed) do
+	table.insert(chaoticsp,r2:NextInteger(i - 4,i + 7,seed + i))
 end
 
-for i = 12 , 99 , r:generateFullRandom(8,5,seed) do
-	table.insert(classiosp,r2:generateFullRandom(i - 4,i + 7,seed + i))
+for i = 12 , 99 , r:NextInteger(8,5,seed) do
+	table.insert(classiosp,r2:NextInteger(i - 4,i + 7,seed + i))
 end
 
-for i = 6 , 90 , r:generateFullRandom(8,6,seed) do
-	table.insert(corrodesp,r2:generateFullRandom(i - 4,i + 7,seed + i))
+for i = 6 , 90 , r:NextInteger(8,6,seed) do
+	table.insert(corrodesp,r2:NextInteger(i - 4,i + 7,seed + i))
 end
 
-for i = 17 , 96 , r:generateFullRandom(4,5,seed) do
-	table.insert(moriartysp,r2:generateFullRandom(i - 4,i + 7,seed + i))
+for i = 17 , 96 , r:NextInteger(4,5,seed) do
+	table.insert(moriartysp,r2:NextInteger(i - 4,i + 7,seed + i))
 end
 
-for i = 20 , 99 , r:generateFullRandom(8,5,seed) do
-	table.insert(deathsp,r2:generateFullRandom(i - 4,i + 7,seed + i))
+for i = 20 , 99 , r:NextInteger(8,5,seed) do
+	table.insert(deathsp,r2:NextInteger(i - 4,i + 7,seed + i))
 end
 
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Loaded",true)
@@ -71,38 +71,38 @@ lastroom.changed:wait()
 
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Laver mode ".. _G.ver .." activated",true)
 task.wait(3)
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Made by Silly cat cat, localplayer and fixed by dripocapy or more known as S",true)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Made by Silly cat cat and localplayer. Fixed by Dripocapy",true)
 task.wait(3)
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption(captions[r3:generateFullRandom(0,#captions,seed)],true)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption(captions[r3:NextInteger(0,#captions,seed)],true)
 
 lastroom.changed:connect(function()
 	if table.find(chaoticsp, lastroom.Value) then
 		task.spawn(function()
-			task.wait(r3:generateFullRandom(5,15,lastroom.Value))
+			task.wait(r3:NextInteger(5,15,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Chaotic"))()
 		end)
 	end
 	if table.find(classiosp, lastroom.Value) then
 		task.spawn(function()
-			task.wait(r3:generateFullRandom(2,12,lastroom.Value))
+			task.wait(r3:NextInteger(2,12,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Classio-Reboundier"))()
 		end)
 	end
 	if table.find(corrodesp, lastroom.Value) then
 		task.spawn(function()
-			task.wait(r3:generateFullRandom(6,6,lastroom.Value))
+			task.wait(r3:NextInteger(6,6,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Corrode"))()
 		end)
 	end
 	if table.find(moriartysp, lastroom.Value) then
 		task.spawn(function()
-			task.wait(r3:generateFullRandom(1,17,lastroom.Value))
+			task.wait(r3:NextInteger(1,17,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Moriarty"))()
 		end) 
 	end
 	if table.find(deathsp, lastroom.Value) then
 		task.spawn(function()
-			task.wait(r3:generateFullRandom(2,20,lastroom.Value))
+			task.wait(r3:NextInteger(2,20,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Death"))()
 		end)
 	end
