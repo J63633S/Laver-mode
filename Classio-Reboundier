@@ -88,6 +88,22 @@ entity:SetCallback("OnDespawning", function()
 end)
 entity:SetCallback("OnDespawned", function()
     print("Entity has despawned")
+local CustomAchievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/DOORS-Custom-Achievements/main/init.luau"))()
+
+if CustomAchievements:CheckOwned("TestAchievement") then
+    CustomAchievements:Revoke("TestAchievement")
+end
+
+CustomAchievements:Grant({
+    Identifier = "classia",
+    Title = "Classic Survivor?",
+    Desc = "You survived classia.. for now",
+    Reason = "Who said a rebounder fears me",
+    Image = "rbxassetid://95143417396425"
+}, {
+    CheckOwned = false,
+    Remember = true
+})
 end)
 entity:SetCallback("OnDamagePlayer", function(newHealth: number)
 	if newHealth <= 0 then
