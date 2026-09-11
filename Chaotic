@@ -97,6 +97,22 @@ end)
 
 entity:SetCallback("OnDespawned", function()
     print("Entity has despawned")
+local CustomAchievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/DOORS-Custom-Achievements/main/init.luau"))()
+
+if CustomAchievements:CheckOwned("TestAchievement") then
+    CustomAchievements:Revoke("TestAchievement")
+end
+
+CustomAchievements:Grant({
+    Identifier = "Chaotic",
+    Title = "Survive Chaotic",
+    Desc = "Fear the chaos around you",
+    Reason = "Is that me breathing?",
+    Image = "rbxassetid://71034216508742"
+}, {
+    CheckOwned = false,
+    Remember = true
+})
 end)
 
 entity:SetCallback("OnDamagePlayer", function(newHealth)
