@@ -421,6 +421,22 @@ end)
 
 entity:SetCallback("OnDespawned", function()
     print("Entity has despawned")
+local CustomAchievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/DOORS-Custom-Achievements/main/init.luau"))()
+
+if CustomAchievements:CheckOwned("TestAchievement") then
+    CustomAchievements:Revoke("TestAchievement")
+end
+
+CustomAchievements:Grant({
+    Identifier = "Cerulean",
+    Title = "Survive Cerulean",
+    Desc = "He returns multiple times to show you who's boss",
+    Reason = "It's better to hide when he returns.",
+    Image = "rbxassetid://80785092784984"
+}, {
+    CheckOwned = false,
+    Remember = true
+})
 end)
 
 entity:SetCallback("OnDamagePlayer", function(newHealth: number)
