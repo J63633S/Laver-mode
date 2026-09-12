@@ -65,7 +65,7 @@ for i = 20 , 99 , r:NextInteger(8,5,seed) do
 	table.insert(deathsp,r2:NextInteger(i - 4,i + 7,seed + i))
 end
 
-for i = 8 , 85 , r:NextInteger(6,8,seed) do
+for i = 18 , 85 , r:NextInteger(6,8,seed) do
 	table.insert(ceruleansp,r2:NextInteger(i - 4,i + 7,seed + i))
 end
 
@@ -114,7 +114,7 @@ lastroom.changed:connect(function()
 	end
 if table.find(ceruleansp, lastroom.Value) then
 		task.spawn(function()
-			task.wait(r3:NextInteger(8,25,lastroom.Value))
+			task.wait(r3:NextInteger(18,45,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Cerulean"))()
 		end)
 	end
