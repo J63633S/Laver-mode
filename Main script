@@ -34,7 +34,6 @@ _G.classio = false
 _G.corrode = false
 _G.moriarty = false
 _G.death = false
-_G.cerulean = false
 
 _G.insp = true
 
@@ -43,7 +42,6 @@ local classiosp = {}
 local corrodesp = {}
 local moriartysp = {}
 local deathsp = {}
-local ceruleansp = {}
 
 for i = 15 , 95 , r:NextInteger(6,8,seed) do
 	table.insert(chaoticsp,r2:NextInteger(i - 4,i + 7,seed + i))
@@ -63,10 +61,6 @@ end
 
 for i = 20 , 99 , r:NextInteger(8,5,seed) do
 	table.insert(deathsp,r2:NextInteger(i - 4,i + 7,seed + i))
-end
-
-for i = 28 , 87 , r:NextInteger(6,3,seed) do
-	table.insert(ceruleansp,r2:NextInteger(i - 4,i + 7,seed + i))
 end
 
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Loaded",true)
@@ -110,11 +104,6 @@ lastroom.changed:connect(function()
 		task.spawn(function()
 			task.wait(r3:NextInteger(2,20,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Death"))()
-		end)
-if table.find(ceruleansp, lastroom.Value) then
-		task.spawn(function()
-			task.wait(r3:NextInteger(8,32,lastroom.Value))
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Cerulean"))()
 		end)
 	end
 end)
