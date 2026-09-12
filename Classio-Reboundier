@@ -51,8 +51,8 @@ local entity = Spawner:Create({
 	},
 	Death = {
 		Type = "Guiding", -- "Curious"
-		Hints = {"Oh you're here", "The entity you encountered was your average come from the Front rebounder", "And don't be fooled", "It repairs lights to trick you."},
-		Cause = "Fooled by Average Rebounding From The Front Entity"
+		Hints = {"Oh you're here", "The entity you encountered was Classia. It will rebound", "And don't be fooled", "It repairs lights to trick you."},
+		Cause = "Classia"
 	}
 })
 ---====== Debug entity ======---
