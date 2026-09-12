@@ -111,7 +111,7 @@ lastroom.changed:connect(function()
 			task.wait(r3:NextInteger(2,20,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Death"))()
 		end)
-if table.find(moriartysp, lastroom.Value) then
+if table.find(ceruleansp, lastroom.Value) then
 		task.spawn(function()
 			task.wait(r3:NextInteger(8,32,lastroom.Value))
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/J63633S/Laver-mode/refs/heads/main/Cerulean"))()
