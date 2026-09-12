@@ -61,6 +61,12 @@ local entity = spawner.Create({
 
 entity:SetCallback("OnSpawned", function()
     print("Entity has spawned")
+local a = Instance.new("Sound") 
+a.SoundId = "rbxassetid://9125713501" 
+a.Volume = 1 
+a.Pitch = 0.7
+a:Play() 
+a.Parent = workspace
 local lights = {}
     local neons = {}
 local TweenService = game:GetService("TweenService")
