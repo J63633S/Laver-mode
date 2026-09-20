@@ -77,7 +77,7 @@ lastroom.changed:wait()
 
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Laver mode ".. _G.ver .." activated",true)
 task.wait(3)
-require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Made by mmsauce21 and localplayer. Fixed by Dripocapy",true)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Made by mmsauce21 and localplayer. Fixed by Dripocapy also DONT PLAY FROM MODE HUBS OR REBOUNDPLAYZ VERSION THEY SRE STOLEN AND FAKE ONES",true)
 task.wait(2)
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Join the discord https://discord.gg/BZR6Na4bBT",true)
 task.wait(1)
